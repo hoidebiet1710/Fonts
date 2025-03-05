@@ -1,0 +1,83 @@
+[Version]
+Signature=$Chicago$
+Provider=%Author%
+
+[Strings]
+Product="Avin"
+Version="2010"
+Info="VietNamese Fonts for Avin"
+Author="ASC"
+Copyright="© 2010 by Team AvinSoft"
+DiskName="ASC, Setup Disk"
+ftn="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+ft="SOFTWARE\Microsoft\Windows\CurrentVersion"
+
+[SourceDisksNames]
+1=%DiskName%,"Setup1",1
+
+[SourceDisksFiles]
+vserife.fon=1
+vnskua.ttf=1
+vnskuab.ttf=1
+vnskuah.ttf=1
+vnsign.ttf=1
+vngrid.ttf=1
+vngridb.ttf=1
+vncust.ttf=1
+vncustb.ttf=1
+
+[DestGrp]
+vserife.fon,,,4
+vnskua.ttf,,,4
+vnskuab.ttf,,,4
+vnskuah.ttf,,,4
+vnsign.ttf,,,4
+vngrid.ttf,,,4
+vngridb.ttf,,,4
+vncust.ttf,,,4
+vncustb.ttf,,,4
+
+[DestinationDirs]
+DestGrp=10,ASC
+
+[ASC.Add.Reg.31]
+VnGrid (TrueType)=vngrid.fot
+VnGrid Bold (TrueType)=vngridb.fot
+VnSign (TrueType)=vnsign.fot
+VnSkua (TrueType)=vnskua.fot
+VnSkua Bold (TrueType)=vnskuab.fot
+VnSkuaH (TrueType)=vnskuah.fot
+VnCust (TrueType)=vncust.fot
+VnCust Bold (TrueType)=vncustb.fot
+
+[ASC.Add.Reg]
+HKLM,Config\0001\Display\Fonts,"Vn-Sans-Serif 8,10,12,14,18,24 (VGA res)",,"%10%\ASC\vserife.fon"
+HKLM,%ft%\Fonts,"VnGrid (TrueType)",,"%10%\ASC\vngrid.ttf"
+HKLM,%ft%\Fonts,"VnGrid Bold (TrueType)",,"%10%\ASC\vngridb.ttf"
+HKLM,%ft%\Fonts,"VnSign (TrueType)",,"%10%\ASC\vnsign.ttf"
+HKLM,%ft%\Fonts,"VnSkua (TrueType)",,"%10%\ASC\vnskua.ttf"
+HKLM,%ft%\Fonts,"VnSkua Bold (TrueType)",,"%10%\ASC\vnskuab.ttf"
+HKLM,%ft%\Fonts,"VnSkuaH (TrueType)",,"%10%\ASC\vnskuah.ttf"
+HKLM,%ft%\Fonts,"VnCust (TrueType)",,"%10%\ASC\vncust.ttf"
+HKLM,%ft%\Fonts,"VnCust Bold (TrueType)",,"%10%\ASC\vncustb.ttf"
+
+[ASC.Add.Reg.NT]
+HKLM,%ftn%\Fonts,"Vn-Sans-Serif 8,10,12,14,18,24 (VGA res)",,"%10%\ASC\vserife.fon"
+HKLM,%ftn%\Fonts,"VnGrid (TrueType)",,"%10%\ASC\vngrid.ttf"
+HKLM,%ftn%\Fonts,"VnGrid Bold (TrueType)",,"%10%\ASC\vngridb.ttf"
+HKLM,%ftn%\Fonts,"VnSign (TrueType)",,"%10%\ASC\vnsign.ttf"
+HKLM,%ftn%\Fonts,"VnSkua (TrueType)",,"%10%\ASC\vnskua.ttf"
+HKLM,%ftn%\Fonts,"VnSkua Bold (TrueType)",,"%10%\ASC\vnskuab.ttf"
+HKLM,%ftn%\Fonts,"VnSkuaH (TrueType)",,"%10%\ASC\vnskuah.ttf"
+HKLM,%ftn%\Fonts,"VnCust (TrueType)",,"%10%\ASC\vncust.ttf"
+HKLM,%ftn%\Fonts,"VnCust Bold (TrueType)",,"%10%\ASC\vncustb.ttf"
+
+[DefaultInstall]
+AddReg = ASC.Add.Reg
+Copyfiles=DestGrp
+
+[DefaultInstall.ntx86]
+AddReg = ASC.Add.Reg.NT
+Copyfiles=DestGrp
+
+; end of instfont.inf

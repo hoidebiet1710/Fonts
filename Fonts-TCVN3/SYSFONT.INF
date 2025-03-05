@@ -1,0 +1,47 @@
+[Version]
+Signature=$Chicago$
+Provider=%Author%
+
+[Strings]
+Product="Vietkey"
+Version="4.0.6"
+Info="VietNamese keyboard"
+Author="Dang Minh Tuan"
+Copyright="© 1997 by Capit"
+DiskName="Vietkey, Setup Disk"
+ftn="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+ft="SOFTWARE\Microsoft\Windows\CurrentVersion"
+
+[SourceDisksNames]
+1=%DiskName%,"Setup1",1
+
+[SourceDisksFiles]
+vgasys.fon=1
+vgafix.fon=1
+sserife.fon=1
+
+[DestGrp]
+vgasys.fon,,,4
+vgafix.fon,,,4
+sserife.fon,,,4
+
+[DestinationDirs]
+DestGrp=10,Vietkey
+
+[VietKey.Add.Reg]
+HKLM,Config\0001\Display\Settings,fixedfon.fon,,"%10%\vietkey\vgafix.fon"
+HKLM,Config\0001\Display\Settings,fonts.fon,,"%10%\vietkey\vgasys.fon"
+HKLM,Config\0001\Display\Fonts,"MS Sans Serif 8,10,12,14,18,24 (VGA res)",,"%10%\vietkey\sserife.fon"
+
+[VietKey.Add.Reg.NT]
+HKLM,%ftn%\WOW\Boot,fixedfon.fon,,"%10%\vietkey\vgafix.fon"
+HKLM,%ftn%\WOW\Boot,fonts.fon,,"%10%\vietkey\vgasys.fon"
+HKLM,%ftn%\Fonts,"MS Sans Serif 8,10,12,14,18,24 (VGA res)",,"%10%\vietkey\sserife.fon"
+
+[DefaultInstall]
+AddReg = VietKey.Add.Reg
+Copyfiles=DestGrp
+
+[DefaultInstall.ntx86]
+AddReg = VietKey.Add.Reg.NT
+Copyfiles=DestGrp
